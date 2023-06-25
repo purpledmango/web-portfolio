@@ -10,6 +10,8 @@ import {
   PiMonitorDuotone,
 } from "react-icons/pi";
 
+import { LiaReact, LiaJsSquare, LiaNode, LiaCss3 } from "react-icons/lia";
+
 function App() {
   return (
     <>
@@ -69,16 +71,20 @@ function App() {
         </div>
       </section>
 
-      <section className="w-screen pt-6 my-6">
-        <article className="relative">
-          <div className="bg-[var(--card-bg)]  skew-y-[-3deg] absolute w-full h-80 "></div>
-          <h2 className="text-xl font-semibold text-center relative z-10 top-2">
+      <section className="w-screen my-6 h-[460px]">
+        <article className="relative h-full py-12">
+          <div className="bg-[var(--card-bg)]  skew-y-[-3deg] absolute w-full h-full"></div>
+          <h2 className="text-xl font-semibold text-center relative z-10 pt-6">
             A little About Me
           </h2>
+          <div className="relative z-10 flex justify-center py-6 ">
+            <img
+              src="public/nitish.jpeg"
+              className="w-24 h-24 md:w-32 md:h-32  object-cover rounded-full border-2 border-[var(--primary-dark)] "
+            />
+          </div>
 
-          <img src="public/nitish.jpeg" />
-
-          <span className="relative z-10 w-[85%] mx-auto top-8 flex">
+          <span className="relative z-10 w-[85%] mx-auto flex text-justify">
             I am a passionate web developer with a strong focus on mastering the
             MERN stack. Proficient in MongoDB, Express.js, React, and Node.js, I
             am dedicated to creating innovative and efficient web applications.
@@ -89,25 +95,39 @@ function App() {
         </article>
       </section>
 
-      <section className="w-screen py-6 my-6 pt-6">
-        <h2 className="text-xl font-semibold text-center mt-12 pt-12">
-          My Work and Projects
+      <section className="w-screen py-12">
+        <h2 className="text-xl text-center font-bold tracking-tighter py-6">
+          My Skillsets
         </h2>
+        <div className="text-6xl flex justify-evenly py-4">
+          <LiaJsSquare className="text-[var(--primary-dark)] transition-all ease-in-out  hover:text-[var(--primary-light)] hover:scale-105" />
+          <LiaReact className="text-[var(--primary-dark)] transition-all ease-in-out  hover:text-[var(--primary-light)] hover:scale-105" />
+          <LiaNode className="text-[var(--primary-dark)] transition-all ease-in-out  hover:text-[var(--primary-light)] hover:scale-105" />
+          <LiaCss3 className="text-[var(--primary-dark)] transition-all ease-in-out  hover:text-[var(--primary-light)] hover:scale-105" />
+        </div>
+      </section>
 
-        <div className="grid grid-cols-1 w-[80%] mx-auto gap-3 mt-6">
-          <div className=" p-6 bg-[var(--card-bg)] rounded-xl">
-            <img
-              src="https://picsum.photos/id/237/200/300 "
-              className="w-full object-cover rounded-xl h-24"
-            />
-          </div>
-          <div className=" p-6 bg-[var(--card-bg)] rounded-xl">
-            <h3 className="font-semibold"> HrTools</h3>
-            <p className="text-md font-thin">
-              Developed using the MERN stack. Hrs can use this service to
-              regiser their company using the API of the UI build in Reactjs and
-              Manage their Employees all under a single Dashboard
-            </p>
+      <section className="w-screen py-12">
+        <div className=" relative z-10 ">
+          <h2 className="text-xl font-bold tracking-tighter text-center py-6">
+            My Work and Projects
+          </h2>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 m w-[80%] mx-auto gap-3 mt-6">
+            <div className=" p-6 bg-[var(--card-bg)] rounded-xl">
+              <img
+                src="https://picsum.photos/id/237/200/300 "
+                className="w-full object-cover rounded-xl h-24"
+              />
+            </div>
+            <div className="p-6 bg-[var(--card-bg)] rounded-xl">
+              <h3 className="font-semibold"> HrTools</h3>
+              <p className="text-md font-thin">
+                Developed using the MERN stack. Hrs can use this service to
+                regiser their company using the API of the UI build in Reactjs
+                and Manage their Employees all under a single Dashboard
+              </p>
+            </div>
           </div>
         </div>
       </section>
