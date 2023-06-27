@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./index.css";
-import "../public/nitish.jpeg";
+import nitishPic from "./nitish.jpeg";
 
 import {
   PiGithubLogoLight,
@@ -79,7 +79,7 @@ function App() {
           </h2>
           <div className="relative z-10 flex justify-center py-6 ">
             <img
-              src="public/nitish.jpeg"
+              src={nitishPic}
               className="w-24 h-24 md:w-32 md:h-32  object-cover rounded-full border-2 border-[var(--primary-dark)] "
             />
           </div>
