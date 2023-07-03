@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./index.css";
-import nitishPic from "./nitish.jpeg";
+import nitishPic from "/nitish.jpeg";
 
 import {
   PiGithubLogoLight,
