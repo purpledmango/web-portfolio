@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./index.css";
-import nitishPic from "/nitish.jpeg";
+import nitishPic from "./animated nitish.gif";
+import resume from "./Resume.docx";
 
 import {
   PiGithubLogoLight,
@@ -20,14 +21,17 @@ function App() {
         <div className="w-[80%] flex flex-col items-center justify-center my-5 mx-auto space-y-2">
           <span className="font-lg">Hello, I am</span>
           <h1 className="text-3xl font-bold tracking-tighter pt-4">
-            Nitish K. Chauhan
+            Nitish Kumar Chauhan
           </h1>
           <span className="text-xs uppercase tracking-wide flex justify-center items-center">
             Creative Frontend & Backend Web Developer
           </span>
-          <button className="my-2 p-2 rounded bg-gradient-to-r from-[var(--primary-light)] to-[var(--primary-dark)] text-xs shadow-lg transition-all ease-in-out hover:scale-105">
+          <a
+            href={resume}
+            className="my-2 p-2 rounded bg-gradient-to-r from-[var(--primary-light)] to-[var(--primary-dark)] text-xs shadow-lg transition-all ease-in-out hover:scale-105"
+          >
             Download Resume
-          </button>
+          </a>
 
           {/* Logos */}
           <div className="flex space-x-4 text-3xl py-3">

@@ -1,8 +1,20 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
-// https://vitejs.dev/config/
 export default defineConfig({
-base: "/", 
- plugins: [react()],
-})
+  base: '/',
+  plugins: [react()],
+  build: {
+    rollupOptions: {
+      output: {
+        // Preserve the original file name and extension for all assets
+        assetFileNames: '[name][extname]',
+      },
+    },
+  },
+  assetsInclude: ["**/*.docx"],
+  // Include .docx files as assets
+  assets: {
+    include: ["**/*.docx"],
+  },
+});
