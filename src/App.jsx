@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./index.css";
 import nitishPic from "./animated nitish.gif";
 import resume from "./Resume.docx";
@@ -11,9 +10,94 @@ import {
   PiMonitorDuotone,
 } from "react-icons/pi";
 
-import { LiaReact, LiaJsSquare, LiaNode, LiaCss3 } from "react-icons/lia";
+import { BiLogoMongodb, BiLogoCss3 } from "react-icons/bi";
+import { DiDjango } from "react-icons/di";
+import {FaLinux, FaPython} from 'react-icons/fa'
+import {SiGnubash, SiExpress} from 'react-icons/si'
+import {RiHtml5Line} from 'react-icons/ri'
+
+import { LiaReact, LiaNode, LiaJsSquare} from "react-icons/lia";
+import ProjectInfo from './components/ProjectInfo.jsx'
+import SkillInfoCard from './components/SkillInfoCard.jsx'
+import SkillSetMisc from './components/SkillSetMisc.jsx'
+
+
 
 function App() {
+
+  const projectData = [
+    {
+      name: "Blog Api",
+      description: "The Api was developed for a Blog App developed in Reactjs",
+      liveLink: "https://www.google.com",
+      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKxJAEO-pgjKjxsE_S0eeX94jDXLz0jmD2GrN8aJ8QB8oF8Tcrv4sixkrBDv6zHSxbR6E&usqp=CAU"
+    },{
+      name: "Swimble HTML Template",
+      description: "The Api was developed for a Blog App developed in Reactjs",
+      liveLink: "https://www.google.com",
+      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKxJAEO-pgjKjxsE_S0eeX94jDXLz0jmD2GrN8aJ8QB8oF8Tcrv4sixkrBDv6zHSxbR6E&usqp=CAU"
+    },{
+      name: "Blog Api",
+      description: "The Api was developed for a Blog App developed in Reactjs",
+      liveLink: "https://www.google.com",
+      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKxJAEO-pgjKjxsE_S0eeX94jDXLz0jmD2GrN8aJ8QB8oF8Tcrv4sixkrBDv6zHSxbR6E&usqp=CAU"
+    },
+    {
+      name: "Api2",
+      description: "The Api was developed for a Blog App developed in Reactjs"
+    }
+  ];
+
+  const skillData = [
+
+  {
+    name: "Building Engaging Frontend Experiencesk",
+    description: "As a React.js enthusiast, I thrive on creating dynamic, interactive user interfaces. My expertise lies in crafting seamless frontend experiences that captivate users and elevate web applications. I'm well-versed in leveraging React's component-based architecture to develop scalable, reusable UI elements. With a keen eye for design and a commitment to performance optimization, I deliver visually stunning and lightning-fast web applications.",
+    logo: <LiaReact/>
+  },
+
+  {
+    name: "Crafting Lightning-Fast, Scalable APIs",
+    description: "My expertise lies in creating efficient, real-time applications, ensuring a seamless user experience. With a strong foundation in RESTful architecture and modern API design, I deliver robust solutions tailored to project requirements.",
+    logo: <LiaNode/>
+  },
+  {
+    name: "Efficient NoSQL Database Management",
+    description: "Proficient in MongoDB, I excel in designing and managing NoSQL databases for seamless data storage and retrieval. My expertise lies in crafting efficient database schemas and optimizing queries for optimal performance. I'm skilled in handling large volumes of unstructured data, ensuring robust and scalable solutions. With a deep understanding of MongoDB's features, I implement effective data modeling strategies to meet project-specific requirements.",
+    logo: <BiLogoMongodb/>
+  }
+
+    ];
+
+    const MiscSkillset = [
+
+  {
+    logo: <FaLinux/>
+  },
+  {
+    logo: <SiGnubash/>
+  },
+  {
+    logo: <FaPython/>
+  },
+  {
+    logo: <LiaJsSquare/>
+  },
+  {
+    logo: <BiLogoCss3/>
+  },
+  {
+    logo: <RiHtml5Line/>
+  },
+  {
+    logo: <DiDjango/>
+  },
+{
+    logo: <SiExpress/>
+  },
+
+];
+
   return (
     <>
       {/* Intro */}
@@ -43,36 +127,15 @@ function App() {
       </section>
 
       <section className="w-screen pt-6">
-        <h2 className="font-bold text-xl text-center">Things I love</h2>
-        <div className="w-[85%] flex-col mx-auto justify-center items-center flex flex-col flex-wrap md:flex-row md:space-x-2">
-          <div className="flex py-2">
-            <div className="p-6 rounded-xl flex flex-col items-center justify-center space-y-4 shadow-2xl bg-[var(--card-bg)]">
-              <div className="relative h-24 w-24 bg-[var(--primary-dark)] rounded-full transition-all ease-in-out hover:scale-125">
-                <PiCodeDuotone className="text-6xl absolute top-[20%] left-[20%] " />
-              </div>
-              <h3 className="text-xl font-semibold">Front End</h3>
-              <span>I enjoy building interactive Frontend using Reactjs</span>
-            </div>
-          </div>
-          <div className="flex py-2">
-            <div className="p-6 rounded-xl flex flex-col items-center justify-center space-y-4 shadow-2xl bg-[var(--card-bg)]">
-              <div className="relative h-24 w-24 bg-[var(--primary-dark)] rounded-full transition-all ease-in-out hover:scale-125">
-                <PiMonitorDuotone className="text-6xl absolute top-[20%] left-[20%]" />
-              </div>
-              <h3 className="text-xl font-semibold">Backend APIs</h3>
-              <span>I enjoy building interactive Frontend using Reactjs</span>
-            </div>
-          </div>
-          <div className="flex py-2">
-            <div className="p-6 rounded-xl flex flex-col items-center justify-center space-y-4 shadow-2xl bg-[var(--card-bg)]">
-              <div className="relative h-24 w-24 bg-[var(--primary-dark)] rounded-full transition-all ease-in-out hover:scale-125">
-                <PiCodeDuotone className="text-6xl absolute top-[20%] left-[20%]" />
-              </div>
-              <h3 className="text-xl font-semibold">MERN Stack</h3>
-              <span>I enjoy building interactive Frontend using Reactjs</span>
-            </div>
-          </div>
+        <h2 className="font-bold text-xl text-center"> My Skillsets</h2>
+        <div className="w-[85%] flex-col mx-auto justify-center items-center flex flex-col md:flex-col md:space-y-6">
+          {skillData.map((skill, index) => (
+            
+              <SkillInfoCard skillName={skill.name} skillDescription={skill.description} logo={skill.logo} index={index} />
+            
+          ))}
         </div>
+
       </section>
 
       <section className="w-screen my-6 h-[460px]">
@@ -101,40 +164,36 @@ function App() {
 
       <section className="w-screen py-12">
         <h2 className="text-xl text-center font-bold tracking-tighter py-6">
-          My Skillsets
+          Other Skillsets
         </h2>
-        <div className="text-6xl flex justify-evenly py-4">
-          <LiaJsSquare className="text-[var(--primary-dark)] transition-all ease-in-out  hover:text-[var(--primary-light)] hover:scale-105" />
-          <LiaReact className="text-[var(--primary-dark)] transition-all ease-in-out  hover:text-[var(--primary-light)] hover:scale-105" />
-          <LiaNode className="text-[var(--primary-dark)] transition-all ease-in-out  hover:text-[var(--primary-light)] hover:scale-105" />
-          <LiaCss3 className="text-[var(--primary-dark)] transition-all ease-in-out  hover:text-[var(--primary-light)] hover:scale-105" />
+        <div className="text-6xl flex flex-col items-center justify-center gap-5 md:flex-row lg:justify-evenly py-4">
+         
+            {MiscSkillset.map((skill) => {
+           return <SkillSetMisc icon={skill.logo} />;
+        })}
+
         </div>
       </section>
 
-      <section className="w-screen py-12">
-        <div className=" relative z-10 ">
+      {/*<section className="w-screen py-6">
+        <div className=" relative  ">
           <h2 className="text-xl font-bold tracking-tighter text-center py-6">
             My Work and Projects
           </h2>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 m w-[80%] mx-auto gap-3 mt-6">
-            <div className=" p-6 bg-[var(--card-bg)] rounded-xl">
-              <img
-                src="https://picsum.photos/id/237/200/300 "
-                className="w-full object-cover rounded-xl h-24"
-              />
-            </div>
-            <div className="p-6 bg-[var(--card-bg)] rounded-xl">
-              <h3 className="font-semibold"> HrTools</h3>
-              <p className="text-md font-thin">
-                Developed using the MERN stack. Hrs can use this service to
-                regiser their company using the API of the UI build in Reactjs
-                and Manage their Employees all under a single Dashboard
-              </p>
-            </div>
-          </div>
+          <div className="flex flex-col space-y-8">
+
+         {projectData.map((project) => {
+           return <ProjectInfo name={project.name} description={project.description} liveLink={project.liveLink} img={project.img} />;
+        })}
+
+         </div>
+
+
         </div>
-      </section>
+
+
+      </section>*/}
     </>
   );
 }
