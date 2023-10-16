@@ -20,33 +20,9 @@ import { LiaReact, LiaNode, LiaJsSquare } from "react-icons/lia";
 import ProjectInfo from "./components/ProjectInfo.jsx";
 import SkillInfoCard from "./components/SkillInfoCard.jsx";
 import SkillSetMisc from "./components/SkillSetMisc.jsx";
-
+import projectData from "./constants/projectData";
+import aboutMe from "./constants/aboutMe";
 function App() {
-  const projectData = [
-    {
-      name: "Blog Api",
-      description: "The Api was developed for a Blog App developed in Reactjs",
-      liveLink: "https://www.google.com",
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKxJAEO-pgjKjxsE_S0eeX94jDXLz0jmD2GrN8aJ8QB8oF8Tcrv4sixkrBDv6zHSxbR6E&usqp=CAU",
-    },
-    {
-      name: "Swimble HTML Template",
-      description: "The Api was developed for a Blog App developed in Reactjs",
-      liveLink: "https://www.google.com",
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKxJAEO-pgjKjxsE_S0eeX94jDXLz0jmD2GrN8aJ8QB8oF8Tcrv4sixkrBDv6zHSxbR6E&usqp=CAU",
-    },
-    {
-      name: "Blog Api",
-      description: "The Api was developed for a Blog App developed in Reactjs",
-      liveLink: "https://www.google.com",
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKxJAEO-pgjKjxsE_S0eeX94jDXLz0jmD2GrN8aJ8QB8oF8Tcrv4sixkrBDv6zHSxbR6E&usqp=CAU",
-    },
-    {
-      name: "Api2",
-      description: "The Api was developed for a Blog App developed in Reactjs",
-    },
-  ];
-
   const skillData = [
     {
       name: "Building Engaging Frontend Experiencesk",
@@ -123,12 +99,12 @@ function App() {
           </div>
         </div>
       </section>
-
       <section className="w-screen pt-6">
         <h2 className="font-bold text-xl text-center"> My Skillsets</h2>
         <div className="w-[85%] flex-col mx-auto justify-center items-center flex flex-col md:flex-col md:space-y-6">
           {skillData.map((skill, index) => (
             <SkillInfoCard
+              key={index}
               skillName={skill.name}
               skillDescription={skill.description}
               logo={skill.logo}
@@ -137,14 +113,12 @@ function App() {
           ))}
         </div>
       </section>
-
-      <section className="w-screen my-6 h-[460px]">
-        <article className="relative h-full py-12">
-          <div className="bg-[var(--card-bg)]  skew-y-[-3deg] absolute w-full h-full"></div>
-          <h2 className="text-xl font-semibold text-center relative z-10 pt-6">
+      <section className="w-screen my-6 h-96">
+        <article className="relative h-full py-12 flex flex-col items-center just">
+          <h2 className="text-xl font-semibold text-center relative z-10 mt-6">
             A little About Me
           </h2>
-          <div className="relative z-10 flex justify-center py-6 ">
+          <div className="relative z-10 flex justify-center items-center py-6 ">
             <img
               src={nitishPic}
               className="w-24 h-24 md:w-32 md:h-32  object-cover rounded-full border-2 border-[var(--primary-dark)] "
@@ -152,46 +126,36 @@ function App() {
           </div>
 
           <span className="relative z-10 w-[85%] mx-auto flex text-justify">
-            I am a passionate web developer with a strong focus on mastering the
-            MERN stack. Proficient in MongoDB, Express.js, React, and Node.js, I
-            am dedicated to creating innovative and efficient web applications.
-            I possess a natural talent for problem-solving and thrive in
-            collaborative environments. I am excited to contribute my skills to
-            cutting-edge projects and work alongside like-minded professionals
+            {aboutMe}
           </span>
+          <div className="bg-[var(--card-bg)] absolute w-full h-full"></div>
         </article>
       </section>
-
-      <section className="w-screen py-12">
+      <section className="w-screen my-12">
         <h2 className="text-xl text-center font-bold tracking-tighter py-6">
           Other Skillsets
         </h2>
-        <div className="text-6xl flex flex-col items-center justify-center gap-5 md:flex-row lg:justify-evenly py-4">
-          {MiscSkillset.map((skill) => {
-            return <SkillSetMisc icon={skill.logo} />;
+        <div className="text-6xl grid grid-cols-2 md:grid-cols-3 place-items-center mx-auto lg:flex items-center justify-center gap-5 md:flex-row lg:justify-evenly py-4">
+          {MiscSkillset.map((skill, index) => {
+            return <SkillSetMisc icon={skill.logo} key={index} />;
           })}
         </div>
       </section>
-
-      {/*<section className="w-screen py-6">
-        <div className=" relative  ">
-          <h2 className="text-xl font-bold tracking-tighter text-center py-6">
-            My Work and Projects
-          </h2>
-
-          <div className="flex flex-col space-y-8">
-
-         {projectData.map((project) => {
-           return <ProjectInfo name={project.name} description={project.description} liveLink={project.liveLink} img={project.img} />;
-        })}
-
-         </div>
-
-
+      <section className="w-screen">
+        <div className="flex flex-col items-center justify-center space-y-4 w-[85%] mx-auto">
+          {projectData.map((info, index) => {
+            return (
+              <ProjectInfo
+                key={index}
+                name={info.name}
+                description={info.description}
+                liveLink={info.liveLink}
+                img={info.img}
+              />
+            );
+          })}
         </div>
-
-
-      </section>*/}
+      </section>
     </>
   );
 }
