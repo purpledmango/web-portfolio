@@ -141,7 +141,7 @@ function App() {
           })}
         </div>
       </section>
-      <section className="w-screen">
+      <section className="w-screen ">
         <div className="flex flex-col items-center justify-center space-y-4 w-[85%] mx-auto">
           {projectData.map((info, index) => {
             return (
