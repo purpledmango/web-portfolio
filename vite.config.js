@@ -2,7 +2,7 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
-  base: "/web-portfolio",
+  base: "https://purpledmango.github.io/web-portfolio/",
   plugins: [react()],
   build: {
     rollupOptions: {
