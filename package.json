@@ -1,4 +1,5 @@
 {
+  "homepage": "https://purpledmango.github.io/web-portfolio/",
   "name": "web-portfolio",
   "private": true,
   "version": "0.0.0",
@@ -9,7 +10,7 @@
     "deploy": "gh-pages -d dist",
     "build": "vite build",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview",
+    "preview": "vite preview"
   
   },
   "dependencies": {

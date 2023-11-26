@@ -20,8 +20,8 @@ import { LiaReact, LiaNode, LiaJsSquare } from "react-icons/lia";
 import ProjectInfo from "./components/ProjectInfo.jsx";
 import SkillInfoCard from "./components/SkillInfoCard.jsx";
 import SkillSetMisc from "./components/SkillSetMisc.jsx";
-import projectData from "./constants/projectData";
-import aboutMe from "./constants/aboutMe";
+import projectData from "./constants/projectData.js";
+import aboutMe from "./constants/aboutMe.js";
 function App() {
   const skillData = [
     {
