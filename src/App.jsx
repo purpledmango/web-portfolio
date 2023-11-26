@@ -1,6 +1,6 @@
 import "./index.css";
 import nitishPic from "./nitish-no-bg.png";
-import resume from "./Resume.docx";
+import resume from "./Resume.pdf";
 
 import {
   PiGithubLogoLight,
