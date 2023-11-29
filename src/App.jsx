@@ -99,21 +99,7 @@ function App() {
           </div>
         </div>
       </section>
-      <section className="w-screen pt-6">
-        <h2 className="font-bold text-xl text-center"> My Skillsets</h2>
-        <div className="w-[85%] flex-col mx-auto justify-center items-center flex flex-col md:flex-col md:space-y-6">
-          {skillData.map((skill, index) => (
-            <SkillInfoCard
-              key={index}
-              skillName={skill.name}
-              skillDescription={skill.description}
-              logo={skill.logo}
-              index={index}
-            />
-          ))}
-        </div>
-      </section>
-      <section className="w-screen my-6 h-96">
+      <section className="w-screen h-96">
         <article className="relative h-full py-12 flex flex-col items-center just">
           <h2 className="text-xl font-semibold text-center relative z-10 mt-6">
             A little About Me
@@ -130,6 +116,20 @@ function App() {
           </span>
           <div className="bg-[var(--card-bg)] absolute w-full h-full"></div>
         </article>
+      </section>
+      <section className="w-screen pt-6">
+        <h2 className="font-bold text-xl text-center"> My Skillsets</h2>
+        <div className="w-[85%] flex-col mx-auto justify-center items-center flex flex-col md:flex-col md:space-y-6">
+          {skillData.map((skill, index) => (
+            <SkillInfoCard
+              key={index}
+              skillName={skill.name}
+              skillDescription={skill.description}
+              logo={skill.logo}
+              index={index}
+            />
+          ))}
+        </div>
       </section>
       <section className="w-screen my-12">
         <h2 className="text-xl text-center font-bold tracking-tighter py-6">
