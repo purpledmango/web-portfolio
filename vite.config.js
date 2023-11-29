@@ -1,20 +1,11 @@
-import { defineConfig } from 'vite';
+// vite.config.js
 import react from '@vitejs/plugin-react';
 
-export default defineConfig({
-  base: "https://purpledmango.github.io/web-portfolio/",
+export default {
   plugins: [react()],
   build: {
     rollupOptions: {
-      output: {
-        // Preserve the original file name and extension for all assets
-        assetFileNames: '[name][extname]',
-      },
+      external: ['module-name'], // Add the problematic module name here
     },
   },
-  assetsInclude: ["**/*.docx"],
-  // Include .docx files as assets
-  assets: {
-    include: ["**/*.docx"],
-  },
-});
+};
