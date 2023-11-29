@@ -75,13 +75,13 @@ function App() {
   return (
     <>
       {/* Intro */}
-      <section className="w-screen pt-8">
-        <div className="w-[80%] flex flex-col items-center justify-center my-5 mx-auto space-y-2">
-          <span className="font-lg">Hello, I am</span>
-          <h1 className="text-3xl font-bold tracking-tighter pt-4">
-            Nitish Kumar Chauhan
+      <section className="w-screen mt-8">
+        <div className="w-[80%] flex flex-col items-center justify-center my-5 mx-auto space-y-4">
+          <span className="text-xl">Hello, I am</span>
+          <h1 className="text-3xl font-bold tracking-tighter pt-4 text-center">
+            Nitish K. Chauhan
           </h1>
-          <span className="text-xs uppercase tracking-wide flex justify-center items-center">
+          <span className="text-md  uppercase tracking-wide text-center">
             Creative Frontend & Backend Web Developer
           </span>
           <a
@@ -99,12 +99,12 @@ function App() {
           </div>
         </div>
       </section>
-      <section className="w-screen h-96">
+      <section className="w-screen h-auto lg:h-96 mb-24">
         <article className="relative h-full py-12 flex flex-col items-center just">
-          <h2 className="text-xl font-semibold text-center relative z-10 mt-6">
+          <h2 className="text-md lg:text-2xl font-semibold text-center relative z-10 pt-6">
             A little About Me
           </h2>
-          <div className="relative z-10 flex justify-center items-center py-6 ">
+          <div className="relative z-10 flex justify-center items-center my-3 ">
             <img
               src={nitishPic}
               className="w-24 h-24 md:w-32 md:h-32  object-cover rounded-full border-2 border-[var(--primary-dark)] "
@@ -117,8 +117,18 @@ function App() {
           <div className="bg-[var(--card-bg)] absolute w-full h-full"></div>
         </article>
       </section>
+      <section className="w-screen my-12">
+        <h2 className="text-md lg:text-2xl text-center font-bold tracking-tighter my-6">
+          Skills
+        </h2>
+        <div className="text-6xl grid grid-cols-3 md:grid-cols-4 place-items-center mx-auto lg:flex items-center justify-center gap-5 md:flex-row lg:justify-evenly py-4">
+          {MiscSkillset.map((skill, index) => {
+            return <SkillSetMisc icon={skill.logo} key={index} />;
+          })}
+        </div>
+      </section>
       <section className="w-screen pt-6">
-        <h2 className="font-bold text-xl text-center"> My Skillsets</h2>
+        <h2 className="font-bold text-md lg:text-2xl text-center"> My Expertise Include</h2>
         <div className="w-[85%] flex-col mx-auto justify-center items-center flex flex-col md:flex-col md:space-y-6">
           {skillData.map((skill, index) => (
             <SkillInfoCard
@@ -131,17 +141,8 @@ function App() {
           ))}
         </div>
       </section>
-      <section className="w-screen my-12">
-        <h2 className="text-xl text-center font-bold tracking-tighter py-6">
-          Other Skillsets
-        </h2>
-        <div className="text-6xl grid grid-cols-2 md:grid-cols-3 place-items-center mx-auto lg:flex items-center justify-center gap-5 md:flex-row lg:justify-evenly py-4">
-          {MiscSkillset.map((skill, index) => {
-            return <SkillSetMisc icon={skill.logo} key={index} />;
-          })}
-        </div>
-      </section>
-      <section className="w-screen ">
+      <section className="w-screen my-8">
+      <h2 className="font-bold text-md lg:text-2xl text-center mt-6"> My Projects</h2>
         <div className="flex flex-col items-center justify-center space-y-4 w-[85%] mx-auto">
           {projectData.map((info, index) => {
             return (
