@@ -1,5 +1,5 @@
 import "./index.css";
-import nitishPic from "./nitish-no-bg.png";
+
 import resume from "./Resume.pdf";
 
 import {
@@ -100,18 +100,13 @@ function App() {
         </div>
       </section>
       <section className="w-screen h-auto lg:h-96 mb-24">
-        <article className="relative h-full py-12 flex flex-col items-center just">
-          <h2 className="text-md lg:text-2xl font-semibold text-center relative z-10 pt-6">
+        <article className="relative h-full py-6 space-y-4 flex flex-col items-center justify-center">
+          <h2 className="text-md lg:text-3xl font-semibold text-center relative z-10 pt-6">
             A little About Me
           </h2>
-          <div className="relative z-10 flex justify-center items-center my-3 ">
-            <img
-              src={nitishPic}
-              className="w-24 h-24 md:w-32 md:h-32  object-cover rounded-full border-2 border-[var(--primary-dark)] "
-            />
-          </div>
+        
 
-          <span className="relative z-10 w-[85%] mx-auto flex text-justify">
+          <span className="relative z-10 w-[85%]  mx-auto flex text-justify">
             {aboutMe}
           </span>
           <div className="bg-[var(--card-bg)] absolute w-full h-full"></div>
